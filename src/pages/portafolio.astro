@@ -15,22 +15,31 @@ const projects = await getCollection("projects");
             projects.map((project) => {
                 const { data, slug } = project;
 
-                const { title, description, img} = data;
+                const { title, description, img } = data;
 
                 return (
-                    <div class="flex justify-center items-center">
-                        <article class="flex flex-row mt-10 mb-10">
-								<a href={`/proyecto/${slug}`} class="mb-2 xl:mb-0 transition hover:scale-110">
-									<img transition:name={`img-${slug}`} src={`/${img}`} alt={title} class="w-60 h-60 rounded-lg mr-5 w-48 rounded object-contain"/>
-								</a>
-								<div class="flex flex-col justify-center p-10">
-									<h2 transition:name={`title-${slug}`} class="mb-2 text-2xl font-bold leading-tight text-white">
-										{title}
-									</h2>
+                    <div class="flex flex-row justify-center items-center mt-10">
+                        <a href={`proyecto/${slug}`}>
+                            <picture class="flex justify-center p-4 transition hover:scale-110">
+                                <img
+                                    transition:name={`img-${slug}`}
+                                    src={`/${img}`}
+                                    alt={title}
+                                    class="mb-5 rounded-lg w-96"
+                                />
+                            </picture>
+                        </a>
+                        <div class="flex flex-col justify-center p-10">
+                            <h2
+                                class="mb-2 text-2xl font-bold leading-tight text-white"
+                            >
+                                {title}
+                            </h2>
 
-									<p class="mb-4 text-gray-300 max-w-sm">{description}</p>
-								</div>
-						</article>  
+                            <p class="mb-4 text-gray-300 max-w-sm">
+                                {description}
+                            </p>
+                        </div>
                     </div>
                 );
             })
