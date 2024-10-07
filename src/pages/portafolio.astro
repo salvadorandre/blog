@@ -7,7 +7,7 @@ import { slide } from "astro:transitions";
 const projects = await getCollection("projects");
 ---
 
-<Layout title="Portafolio">
+<Layout title="Portafolio" transition:animate="slide">
     <Nav />
 
     <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
@@ -20,7 +20,7 @@ const projects = await getCollection("projects");
 
                 return (
 
-                    <div transition:animate="slide" class="flex justify-center items-center min-h-screen">
+                    <div class="flex justify-center items-center min-h-screen">
                         <div class="max-w-[720px] mx-auto">
                             <div class="relative flex flex-col text-white-700 bg-gray-800 shadow-md bg-clip-border rounded-xl w-96">
                                 <div class="relative mx-4 mt-4 overflow-hidden text-white-700 bg-white bg-clip-border rounded-xl h-96">
