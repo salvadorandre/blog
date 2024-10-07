@@ -3,14 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 
 import { getCollection } from "astro:content";
+import { slide } from "astro:transitions";
 const projects = await getCollection("projects");
 ---
 
 <Layout title="Portafolio">
-    <Nav />
     <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
 
-    <main>
+    <main class="flex flex-wrap justify-around items-center">
         {
             projects.map((project) => {
                 const { data, slug } = project;
@@ -18,27 +18,37 @@ const projects = await getCollection("projects");
                 const { title, description, img } = data;
 
                 return (
-                    <div class="flex flex-row justify-center items-center mt-10">
-                        <a href={`proyecto/${slug}`}>
-                            <picture class="flex justify-center p-4 transition hover:scale-110">
-                                <img
-                                    transition:name={`img-${slug}`}
-                                    src={`/${img}`}
-                                    alt={title}
-                                    class="mb-5 rounded-lg w-96"
-                                />
-                            </picture>
-                        </a>
-                        <div class="flex flex-col justify-center p-10">
-                            <h2
-                                class="mb-2 text-2xl font-bold leading-tight text-white"
-                            >
-                                {title}
-                            </h2>
 
-                            <p class="mb-4 text-gray-300 max-w-sm">
-                                {description}
-                            </p>
+                    <div transition:animate={slide({duration: "1s"})} class="flex justify-center items-center min-h-screen">
+                        <div class="max-w-[720px] mx-auto">
+                            <div class="relative flex flex-col text-white-700 bg-gray-800 shadow-md bg-clip-border rounded-xl w-96">
+                                <div class="relative mx-4 mt-4 overflow-hidden text-white-700 bg-white bg-clip-border rounded-xl h-96">
+                                    <img
+                                    
+                                        src={`/${img}`}
+                                        alt="card-image"
+                                        class="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                            {title}
+                                        </p>
+                                    </div>
+                                    <p class="block font-sans text-sm antialiased font-normal leading-normal text-white-700 opacity-75">
+                                        {description}
+                                    </p>
+                                </div>
+                                <div class="p-6 pt-0">
+                                    <a href={`/proyecto/${slug}`} 
+                                        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+                                        type="button"
+                                    >
+                                        Visualizar
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 );
@@ -46,3 +56,13 @@ const projects = await getCollection("projects");
         }
     </main>
 </Layout>
+
+<style>
+    .container { 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;    
+        align-items: center;
+    }
+</style>
