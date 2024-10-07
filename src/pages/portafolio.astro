@@ -7,12 +7,13 @@ import { slide } from "astro:transitions";
 const projects = await getCollection("projects");
 ---
 
-<Layout title="Portafolio" transition:animate="slide">
+<Layout title="Portafolio">
     <Nav />
 
     <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
-    <main class="flex flex-wrap justify-around items-center">
+    <main class="flex flex-wrap justify-around items-center"  transition:animate="slide">
         {
+            
             projects.map((project) => {
                 const { data, slug } = project;
 
