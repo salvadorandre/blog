@@ -20,7 +20,7 @@ const projects = await getCollection("projects");
 
                 return (
 
-                    <a transition:animate="slide" href={`/proyecto/${slug}`} class="w-96 h-96 m-4 p-4 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between">
+                    <a  href={`/proyecto/${slug}`} class="w-96 h-96 m-4 p-4 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between">
                         <img class="w-full h-52 object-contain rounded-lg" src={`/${img}`} alt={title} />
                         <div class="flex flex-col justify-center">
                             <h2 class="text-2xl font-bold">{title}</h2>
