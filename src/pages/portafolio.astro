@@ -9,8 +9,8 @@ const projects = await getCollection("projects");
 
 <Layout title="Portafolio">
     <Nav />
-    <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
 
+    <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
     <main class="flex flex-wrap justify-around items-center">
         {
             projects.map((project) => {
@@ -20,15 +20,50 @@ const projects = await getCollection("projects");
 
                 return (
 
-                    <a  href={`/proyecto/${slug}`} class="w-96 h-96 m-4 p-4 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between">
-                        <img class="w-full h-52 object-contain rounded-lg" src={`/${img}`} alt={title} />
-                        <div class="flex flex-col justify-center">
-                            <h2 class="text-2xl font-bold">{title}</h2>
-                            <p class="text-gray-300">{description}</p>
+                    <div transition:animate="slide" class="flex justify-center items-center min-h-screen">
+                        <div class="max-w-[720px] mx-auto">
+                            <div class="relative flex flex-col text-white-700 bg-gray-800 shadow-md bg-clip-border rounded-xl w-96">
+                                <div class="relative mx-4 mt-4 overflow-hidden text-white-700 bg-white bg-clip-border rounded-xl h-96">
+                                    <img
+                                    
+                                        src={`/${img}`}
+                                        alt="card-image"
+                                        class="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                                            {title}
+                                        </p>
+                                    </div>
+                                    <p class="block font-sans text-sm antialiased font-normal leading-normal text-white-700 opacity-75">
+                                        {description}
+                                    </p>
+                                </div>
+                                <div class="p-6 pt-0">
+                                    <a href={`/proyecto/${slug}`} 
+                                        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+                                        type="button"
+                                    >
+                                        Visualizar
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 );
             })
         }
     </main>
 </Layout>
+
+<style>
+    .container { 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;    
+        align-items: center;
+    }
+</style>
