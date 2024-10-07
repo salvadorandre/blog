@@ -10,7 +10,7 @@ const projects = await getCollection("projects");
     <Nav />
 
     <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
-    <main class="flex flex-wrap justify-around items-center" transition:name="hero">
+    <main class="flex flex-wrap justify-around items-center" transition:animate="slide">
         {
             
             projects.map((project) => {
