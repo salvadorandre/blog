@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 
 import { getCollection } from "astro:content";
-import { slide } from "astro:transitions";
 const projects = await getCollection("projects");
 ---
 
@@ -11,7 +10,7 @@ const projects = await getCollection("projects");
     <Nav />
 
     <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
-    <main class="flex flex-wrap justify-around items-center"  transition:animate="slide">
+    <main class="flex flex-wrap justify-around items-center" transition:name="hero">
         {
             
             projects.map((project) => {
