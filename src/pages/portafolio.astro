@@ -4,13 +4,16 @@ import Nav from "../components/Nav.astro";
 
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
+
+
+
 ---
 
 <Layout title="Portafolio">
     <Nav />
 
-    <h1 class="text-4xl text-center mt-9 font-bold">Mis proyectos</h1>
-    <main class="flex flex-wrap justify-around items-center" transition:animate="slide">
+    <h1 class="text-4xl text-center mt-9 font-bold ">Mis proyectos</h1>
+    <main class="flex flex-wrap justify-around items-center">
         {
             
             projects.map((project) => {
@@ -20,7 +23,7 @@ const projects = await getCollection("projects");
 
                 return (
 
-                    <div class="flex justify-center items-center min-h-screen">
+                    <div class="animate__animated animate__backInRight flex justify-center items-center min-h-screen">
                         <div class="max-w-[720px] mx-auto">
                             <div class="relative flex flex-col text-white-700 bg-gray-800 shadow-md bg-clip-border rounded-xl w-96">
                                 <div class="relative mx-4 mt-4 overflow-hidden text-white-700 bg-white bg-clip-border rounded-xl h-96">
@@ -43,7 +46,7 @@ const projects = await getCollection("projects");
                                 </div>
                                 <div class="p-6 pt-0">
                                     <a href={`/proyecto/${slug}`} 
-                                        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+                                        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-purple-600 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
                                         type="button"
                                     >
                                         Visualizar
