@@ -1,162 +1,168 @@
 ---
-    import Layout from "../layouts/Layout.astro";
-    import Nav from "../components/Nav.astro";
-    import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="CV">
-    <Nav />
+    <main>
+        <section>
+            <div class="py-8 px-4 flex flex-col justify-center items-center">
+                <div class="max-w-screen-md mb-8 lg:mb-16">
+                    <h2
+                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+                    >
+                        ESTUDIOS
+                    </h2>
+                </div>
 
-   <main>
-    <section >
-        <div class="py-8 px-4 flex flex-col justify-center items-center">
-            <div class="max-w-screen-md mb-8 lg:mb-16">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">ESTUDIOS</h2>
-            </div>
-
-            <div class="flex flex-row justify-evenly flex-wrap items-center gap-10">
-                <div class="shadow-2xl w-96 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl ">
-                    <div class="w-16 flex items-center justify-center">
-                        <img src="umg.png" alt="umg">
+                <div
+                    class="flex flex-row justify-evenly flex-wrap items-center gap-10"
+                >
+                    <div
+                        class="shadow-2xl w-80 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl"
+                    >
+                        <div class="w-16 flex items-center justify-center">
+                            <img src="umg.png" alt="umg" />
+                        </div>
+                        <h3
+                            class="mb-2 text-xl font-bold text-center dark:text-white"
+                        >
+                            Universidad Mariano Gálvez
+                        </h3>
+                        <p class="text-gray-500 text-center dark:text-gray-400">
+                            Ingeniería en Sistemas
+                        </p>
+                        <p class="text-gray-500 text-center dark:text-gray-400">
+                            Actualidad
+                        </p>
                     </div>
-                    <h3 class="mb-2 text-xl font-bold text-center dark:text-white">Universidad Mariano Gálvez</h3>
-                    <p class="text-gray-500 text-center dark:text-gray-400">Ingeniería en Sistemas</p>
-                    <p class="text-gray-500 text-center dark:text-gray-400">Actualidad</p>
-                </div>
-                <div class="shadow-2xl w-96 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="galileo.jpeg" alt="">
+                    <div
+                        class="shadow-2xl w-80 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl"
+                    >
+                        <div
+                            class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
+                        >
+                            <img src="galileo.jpeg" alt="" />
+                        </div>
+                        <h3
+                            class="mb-2 text-xl font-bold text-center dark:text-white"
+                        >
+                            Pre-universitario Galileo
+                        </h3>
+                        <p class="text-gray-500 text-center dark:text-gray-400">
+                            Bachillerato en Computación con Orientación
+                            Científica
+                        </p>
+                        <p class="text-gray-500 text-center dark:text-gray-400">
+                            2022-2023
+                        </p>
                     </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Pre-universitario Galileo</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Bachillerato en Computación con Orientación Científica</p>
-                    <p class="text-gray-500 text-center dark:text-gray-400">2022-2023</p>
-
-                </div>
-                <div class=" shadow-2xl w-96 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="funsalud.png" alt="">
+                    <div
+                        class="shadow-2xl w-80 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl"
+                    >
+                        <div
+                            class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
+                        >
+                            <img src="funsalud.png" alt="" />
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold dark:text-white">
+                            FunSalud
+                        </h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-center">
+                            Diplomado en Desarrollo Web
+                        </p>
+                        <p class="text-gray-500 text-center dark:text-gray-400">
+                            2023
+                        </p>
                     </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">FunSalud</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Diplomado en Desarrollo Web</p>
-                    <p class="text-gray-500 text-center dark:text-gray-400">2023</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
- 
-    <section>
-        <div class="py-8 px-4  flex flex-col items-center justify-center sm:py-10 lg:px-2">
-            <div class="max-w-screen-md mb-8 lg:mb-16">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">SKILLS</h2>
-            </div>
-            <div class="animate__animated animate__zoomInUp space-y-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-20 md:space-y-0">
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img  src="newangular.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Angular</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="astroBlanco.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Astro</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Medio</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="react.webp" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">React</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
-                </div>
-                <div class="flex justify-center flex-col items-center"> 
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="php.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Php</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Medio</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-11 h-11 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="newJango.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Django</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="laravelNiece.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Laravel</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Medio</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="typescript.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Typescript</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="flutter.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Flutter</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="Asp.webp" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">ASP .Net</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="javascript.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">JavaScript</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Medio</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="Mysql.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">MySQL</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Medio</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="posgress.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">PostgreSQL</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Medio</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="live.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Livewire</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <img src="FondoWeb.png" alt="">
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Livewire</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Básico</p>
                 </div>
             </div>
-            
-        </div>
-      </section>
-   </main>
+        </section>
 
-      
-    <Footer/>
+        <section>
+            <div
+                class="py-8 px-4 flex flex-col items-center justify-center sm:py-10 lg:px-2"
+            >
+                <div class="max-w-screen-md mb-8 lg:mb-16">
+                    <h2
+                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+                    >
+                        SKILLS
+                    </h2>
+                </div>
+                <div
+                    id="default-carousel"
+                    class="relative w-full max-w-screen-md"
+                    data-carousel="slide"
+                >
+                    <!-- Carousel wrapper -->
+                    <div
+                        class="relative h-96 overflow-hidden rounded-lg md:h-96"
+                    >
+                        <!-- Item 1 -->
+                        <div
+                            class="hidden duration-700 ease-in-out"
+                            data-carousel-item
+                        >
+                            <img
+                                src="2.png"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="..."
+                            />
+                        </div>
+                        <!-- Item 2 -->
+                        <div
+                            class="hidden duration-700 ease-in-out"
+                            data-carousel-item
+                        >
+                            <img
+                                src="6.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="..."
+                            />
+                        </div>
+                        <!-- Item 3 -->
+                        <div
+                            class="hidden duration-700 ease-in-out"
+                            data-carousel-item
+                        >
+                            <img
+                                src="3.png"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="..."
+                            />
+                        </div>
+                        <!-- Item 4 -->
+                        <div
+                            class="hidden duration-700 ease-in-out"
+                            data-carousel-item
+                        >
+                            <img
+                                src="4.png"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="..."
+                            />
+                        </div>
+                        <!-- Item 5 -->
+                        <div
+                            class="hidden duration-700 ease-in-out"
+                            data-carousel-item
+                        >
+                            <img
+                                src="5.png"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="..."
+                            />
+                        </div>
+                    </div>
+                    
+                    <!-- Slider controls -->
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
 </Layout>
-

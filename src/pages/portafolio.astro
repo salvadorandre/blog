@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 import { getCollection } from "astro:content";
@@ -11,7 +10,7 @@ const projects = await getCollection("projects");
 ---
 
 <Layout title="Portafolio">
-    <Nav />
+
 
     <h1 class="text-4xl text-center mt-9 font-bold ">Mis proyectos</h1>
     <main class="flex flex-wrap justify-around items-center">
@@ -26,9 +25,9 @@ const projects = await getCollection("projects");
                     
 
                     <div class="animate__animated animate__backInUp flex justify-center items-center min-h-screen">
-                        <div class="max-w-[720px] mx-auto">
-                            <div class="relative flex flex-col text-white-700 bg-gray-800 shadow-md bg-clip-border rounded-xl w-96">
-                                <div class="relative mx-4 mt-4 overflow-hidden text-white-700 bg-white bg-clip-border rounded-xl h-96">
+                        <div class="max-w-[720px]">
+                            <div class="relative flex flex-col text-white-700 bg-gray-800 shadow-md bg-clip-border rounded-xl w-80">
+                                <div class="relative mx-4 mt-4 overflow-hidden text-white-700 bg-white bg-clip-border rounded-xl h-80">
                                     <img
                                     
                                         src={`/${img}`}
