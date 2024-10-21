@@ -1,17 +1,25 @@
 ---
-    import Layout from "../layouts/Layout.astro"
-    import Footer from "../components/Footer.astro"
-    
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-
 <Layout title="404">
-
-    <main>
-        <h1 class="text-4xl text-center mt-9 font-bold ">404</h1>
+    <main class="flex flex-col items-center mt-10 rounded-3xl">
+        <img
+            src="https://media.giphy.com/media/KGd6ns7MR1gPCRT52z/giphy.gif?cid=790b7611y33qtrno2ctd99cdg2ncof3ghthkle5nm34horwd&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+            alt=""
+        />
+        <h1 class="text-4xl text-center mt-9 font-bold">404</h1>
         <p class="text-center text-2xl">Página no encontrada</p>
+
+        <a
+            href="/"
+            class="w-80 mt-5 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-purple-600 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            type="button"
+        >
+            Regresar al inicio
+        </a>
     </main>
+
     <Footer />
 </Layout>
-
-
