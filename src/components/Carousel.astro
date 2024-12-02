@@ -2,59 +2,103 @@
 
 ---
 
-<div
-    id="default-carousel"
-    class="relative w-full max-w-screen-md"
-    data-carousel="slide"
->
-    <!-- Carousel wrapper -->
-    <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
-        <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-                src="2.png"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="2"
-                loading="eager"
-            />
-        </div>
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-                src="6.jpg"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
-                loading="lazy"
-            />
-        </div>
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-                src="3.png"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
-                loading="lazy"
-            />
-        </div>
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-                src="4.png"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
-                loading="lazy"
-            />
-        </div>
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-                src="5.png"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
-                loading="lazy"
-            />
-        </div>
+<section class="item-group">
+    <div class="item">
+        <span><h4>HTML5</h4></span>
+        <img class="svg-items" src="html.svg" alt="">
     </div>
+    <div class="item">
+        <span><h4>CSS</h4></span>
+        <img class="svg-items" src="Css.svg" alt="">
+    </div>
+    <div class="item">
+        <span><h4>JS</h4></span>
+        <img class="svg-items" src="Js.svg" alt="">
+    </div>
+    <div class="item">
+        <span><h4>TailwindCss</h4></span>
+        <img class="svg-items" src="tailwind.svg" alt="">
+    </div>
+    <div class="item">
+        <span><h4>Bootstrap 5</h4></span>
+        <img class="svg-items" src="Boostrap.svg" alt="">
+    </div>
+    <div class="item">
+        <span><h4>Laravel</h4></span>
+        <img class="svg-items" src="Laravel.svg" alt="">
+    </div>
+    <div class="item">
+        <span><h4>Jquery</h4></span>
+        <img class="svg-items" src="Jquery.svg" alt="">
+    </div>
+    <div class="item">
+        <span><h4>React</h4></span>
+        <img class="svg-items" src="React.svg" alt="">
+    </div>
+    <div class="item">
+        <span><h4>Angular</h4></span>
+        <img class="svg-items" src="Angular.svg" alt="">
 
-    <!-- Slider controls -->
-</div>
+    </div>
+    <div class="item">
+        <span><h4>Django</h4></span>
+        <img class="svg-items" src="django.svg" alt="">
+    </div>
+</section>
+
+
+<style>
+
+    .item-group {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 25px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .item { 
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        border: 3px solid #646464;
+        border-radius: 5%;
+        width: 230px;
+        height: 265px;
+        transition: .5s ease;
+        margin: 10px;
+    }
+
+    span { 
+        display: block;
+        background: #646464;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h4 { 
+        font-size: 20px;
+    }
+    
+    .svg-items {
+        width: 100px;
+        height: 100px;
+        transition: .5s ease;
+    }
+
+    .item:hover {
+
+        .svg-items {
+            transform: scale(1.5);
+        }
+
+        span { 
+            background: orangered;
+        }
+       
+        border: 3px solid orangered;
+    }
+</style>
