@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import Carousel from "../components/Carousel.astro";
+import InfoEstudios from "../components/InfoEstudios.astro";
 export const prerender = true;
 ---
 
@@ -16,68 +17,7 @@ export const prerender = true;
                         ESTUDIOS
                     </h2>
                 </div>
-
-                <div
-                    class="flex flex-row justify-evenly flex-wrap items-center gap-10"
-                >
-                    <div
-                        class="shadow-2xl w-80 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl"
-                    >
-                        <div class="w-16 flex items-center justify-center">
-                            <img src="umg.png" alt="umg" />
-                        </div>
-                        <h3
-                            class="mb-2 text-xl font-bold text-center dark:text-white"
-                        >
-                            Universidad Mariano Gálvez
-                        </h3>
-                        <p class="text-gray-500 text-center dark:text-gray-400">
-                            Ingeniería en Sistemas
-                        </p>
-                        <p class="text-gray-500 text-center dark:text-gray-400">
-                            Actualidad
-                        </p>
-                    </div>
-                    <div
-                        class="shadow-2xl w-80 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl"
-                    >
-                        <div
-                            class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
-                        >
-                            <img src="galileo.jpeg" alt="" />
-                        </div>
-                        <h3
-                            class="mb-2 text-xl font-bold text-center dark:text-white"
-                        >
-                            Pre-universitario Galileo
-                        </h3>
-                        <p class="text-gray-500 text-center dark:text-gray-400">
-                            Bachillerato en Computación con Orientación
-                            Científica
-                        </p>
-                        <p class="text-gray-500 text-center dark:text-gray-400">
-                            2022-2023
-                        </p>
-                    </div>
-                    <div
-                        class="shadow-2xl w-80 h-80 animate__animated animate__fadeInLeft flex flex-col items-center justify-around bg-gray-900 p-16 rounded-xl"
-                    >
-                        <div
-                            class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
-                        >
-                            <img src="funsalud.png" alt="" />
-                        </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">
-                            FunSalud
-                        </h3>
-                        <p class="text-gray-500 dark:text-gray-400 text-center">
-                            Diplomado en Desarrollo Web
-                        </p>
-                        <p class="text-gray-500 text-center dark:text-gray-400">
-                            2023
-                        </p>
-                    </div>
-                </div>
+                <InfoEstudios />
             </div>
         </section>
 
@@ -102,4 +42,17 @@ export const prerender = true;
     
 
     <Footer />
+
+
+
 </Layout>
+
+<style>
+    .cards-info {
+        transition: 0.3s;
+    }
+
+    .cards-info:hover {
+        transform:matrix(1.05, 0, 0, 1.05, 0, 0);
+    }
+</style>
