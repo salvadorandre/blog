@@ -12,33 +12,69 @@ export const prerender = true;
 ---
 
 <Layout title="CV | André Salvador">
-    <main class="showcase cv">
+    <main class="showcase cv motion-page">
         <header class="cv-header">
             <div>
                 <p class="eyebrow">Mi recorrido</p>
-                <h1>Lo que aprendo.<br /><span class="accent-text">Lo que construyo.</span></h1>
+                <h1>
+                    Lo que aprendo.<br /><span class="accent-text"
+                        >Lo que construyo.</span>
+                </h1>
             </div>
         </header>
 
         <section class="cv-section" aria-labelledby="experience-title">
-            <div class="section-heading"><p class="eyebrow">Emprendimiento</p><h2 id="experience-title">Un proyecto compartido</h2></div>
+            <div class="section-heading">
+                <p class="eyebrow">Emprendimiento</p><h2 id="experience-title">
+                    Un proyecto compartido
+                </h2>
+            </div>
             <article class="company-card">
                 <div class="company-logo">
-                    {companyLogo ? <img src={companyLogo} alt="Logo de Code qx" width="200" height="200" /> : (
-                        <div class="logo-placeholder"><span>Code qx</span><small>Espacio para el logo</small></div>
-                    )}
+                    {
+                        companyLogo ? (
+                            <img
+                                src={companyLogo}
+                                alt="Logo de Code qx"
+                                width="200"
+                                height="200"
+                            />
+                        ) : (
+                            <div class="logo-placeholder">
+                                <>
+                                    <span>Code qx</span>
+                                    <small>Espacio para el logo</small>
+                                </>
+                            </div>
+                        )
+                    }
                 </div>
                 <div class="company-copy">
-                    <div class="company-heading"><h3>Code qx</h3><span class="company-date">Desde enero de 2026</span></div>
+                    <div class="company-heading">
+                        <h3>Code qx</h3><span class="company-date"
+                            >Desde enero de 2026</span>
+                    </div>
                     <p class="company-role">Cofundador</p>
-                    <p>En enero de 2026 fundé Code qx junto a unos compañeros. Nació con la visión de desarrollar y gestionar sistemas para pequeñas empresas y empresas en crecimiento.</p>
-                    <p>Queremos acompañar a estos negocios con herramientas que les ayuden a organizar su trabajo y gestionar sus operaciones a medida que crecen.</p>
+                    <p>
+                        En enero de 2026 fundé Code qx junto a unos compañeros.
+                        Nació con la visión de desarrollar y gestionar sistemas
+                        para pequeñas empresas y empresas en crecimiento.
+                    </p>
+                    <p>
+                        Queremos acompañar a estos negocios con herramientas que
+                        les ayuden a organizar su trabajo y gestionar sus
+                        operaciones a medida que crecen.
+                    </p>
                 </div>
             </article>
         </section>
 
         <section class="cv-section" aria-labelledby="education-title">
-            <div class="section-heading"><p class="eyebrow">Formación</p><h2 id="education-title">Mis estudios</h2></div>
+            <div class="section-heading">
+                <p class="eyebrow">Formación</p><h2 id="education-title">
+                    Mis estudios
+                </h2>
+            </div>
             <InfoEstudios />
         </section>
 
@@ -46,13 +82,16 @@ export const prerender = true;
             <div class="section-heading">
                 <p class="eyebrow">Aprendizaje continuo</p>
                 <h2 id="certifications-title">Certificaciones</h2>
-                <p class="section-intro">Cursos completados en Platzi. Cada enlace abre el diploma correspondiente.</p>
             </div>
             <Certifications />
         </section>
 
         <section class="cv-section" aria-labelledby="skills-title">
-            <div class="section-heading"><p class="eyebrow">Herramientas</p><h2 id="skills-title">Tecnologías con las que trabajo</h2><p class="section-intro">Mi nivel actual en las herramientas que he ido aprendiendo y utilizando.</p></div>
+            <div class="section-heading">
+                <p class="eyebrow">Herramientas</p><h2 id="skills-title">
+                    Tecnologías con las que trabajo
+                </h2>
+            </div>
             <Carousel />
         </section>
     </main>

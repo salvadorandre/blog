@@ -17,17 +17,6 @@
 .home .explore-card h2 { display: flex; justify-content: space-between; gap: 1rem; margin: 1rem 0 .65rem; font-size: 1.15rem; font-weight: 600; }
 .home .explore-card h2 span { color: #c084fc; }
 .home .explore-card p { color: #94a3b8; font-size: .9rem; line-height: 1.7; }
-@media (prefers-reduced-motion: no-preference) {
-    .home .hero-copy > * { animation: home-arrive .75s cubic-bezier(.22, 1, .36, 1) both; }
-    .home .hero-copy > :nth-child(2) { animation-delay: .1s; }
-    .home .hero-copy > :nth-child(3) { animation-delay: .2s; }
-    .home .hero-copy > :nth-child(4) { animation-delay: .3s; }
-    .home .hero-copy > :nth-child(5) { animation-delay: .4s; }
-    .home .portrait-wrap { animation: home-photo-arrive 1s cubic-bezier(.22, 1, .36, 1) .2s both; }
-    .home .explore-grid { animation: home-arrive .75s cubic-bezier(.22, 1, .36, 1) .5s both; }
-}
-@keyframes home-arrive { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes home-photo-arrive { from { opacity: 0; transform: translateY(26px) rotate(-4deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
 @media (max-width: 900px) { .home .hero { gap: 2rem; } }
 @media (max-width: 700px) { .home .hero { grid-template-columns: 1fr; padding: 2.5rem 0; gap: 2.5rem; } .home .hero-copy { max-width: none; } .home .portrait-wrap { max-width: 380px; justify-self: center; } .home .explore-grid { grid-template-columns: 1fr; gap: .5rem; } }
 @media (prefers-reduced-motion: reduce) { .home .explore-card:hover { transform: none; } }
