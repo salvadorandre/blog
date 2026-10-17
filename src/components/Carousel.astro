@@ -1,27 +1,18 @@
 ---
 import "../styles/components/skills.css";
-const skills = [
-    { name: "HTML5", image: "html.svg", level: "Avanzado" },
-    { name: "CSS3", image: "Css.svg", level: "Medio" },
-    { name: "JavaScript", image: "Js.svg", level: "Medio" },
-    { name: "Tailwind CSS", image: "tailwind.svg", level: "Medio" },
-    { name: "Bootstrap 5", image: "Boostrap.svg", level: "Medio" },
-    { name: "Laravel", image: "Laravel.svg", level: "Medio" },
-    { name: "jQuery", image: "Jquery.svg", level: "Medio" },
-    { name: "React", image: "React.svg", level: "Básico" },
-    { name: "Angular", image: "Angular.svg", level: "Básico" },
-    { name: "Django", image: "django.svg", level: "Básico" },
-    { name: "Livewire", image: "Livewire.svg", level: "Básico" },
-    { name: "PHP", image: "PHP.svg", level: "Medio" },
-];
+import { skills } from "../data/profile";
 ---
 
 <ul class="skills-grid" aria-label="Tecnologías y nivel de conocimiento">
-    {skills.map((skill) => (
-        <li class="skill" style={`animation-delay: ${Math.min(skills.indexOf(skill), 7) * 60}ms`}>
+    {skills.map((skill, index) => (
+        <li class="skill" style={`animation-delay: ${Math.min(index, 7) * 60}ms`}>
             <h3>{skill.name}</h3>
-            <img src={`/${skill.image}`} alt="" width="100" height="100" loading="lazy" />
-            <p class="skill-level">{skill.level}</p>
+            {skill.image ? (
+                <span class:list={["skill-icon", { "skill-icon-light": skill.lightBackground }]}>
+                    <img src={`/${skill.image}`} alt="" width="100" height="100" loading="lazy" />
+                </span>
+            ) : <span class="skill-mark" aria-hidden="true">{skill.mark}</span>}
+            <p class="skill-level">{skill.label}</p>
         </li>
     ))}
 </ul>

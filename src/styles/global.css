@@ -1,8 +1,21 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     min-height: 100vh;
     margin: 0;
-    color: white;
-    background-color: #1b1a2b;
+    color: var(--color-text);
+    background-color: var(--color-page);
     background-image: url("/FondoWeb.png");
     background-position: center top;
     background-repeat: no-repeat;
@@ -10,10 +23,36 @@ body {
     background-attachment: fixed;
 }
 
-html {
+body,
+button,
+input,
+select,
+textarea {
     font-family: system-ui, sans-serif;
+}
+
+html {
     min-height: 100%;
-    background-color: #1b1a2b;
+    background-color: var(--color-page);
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+h1, h2, h3, h4, p, figure {
+    margin: 0;
+}
+
+ul, ol, menu {
+    margin: 0;
+    padding: 0;
+}
+
+img, svg, video {
+    display: block;
+    max-width: 100%;
 }
 
 @media (max-width: 700px) {

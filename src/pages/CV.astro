@@ -6,8 +6,9 @@ import InfoEstudios from "../components/InfoEstudios.astro";
 import Certifications from "../components/Certifications.astro";
 import "../styles/showcase.css";
 import "../styles/pages/cv.css";
+import { profile } from "../data/profile";
 
-const companyLogo = "/logo.png";
+const company = profile.company;
 export const prerender = true;
 ---
 
@@ -39,10 +40,10 @@ export const prerender = true;
             <article class="company-card">
                 <div class="company-logo">
                     {
-                        companyLogo ? (
+                        company.logo ? (
                             <img
-                                src={companyLogo}
-                                alt="Logo de Code qx"
+                                src={company.logo}
+                                alt={`Logo de ${company.name}`}
                                 width="200"
                                 height="200"
                             />
@@ -58,20 +59,11 @@ export const prerender = true;
                 </div>
                 <div class="company-copy">
                     <div class="company-heading">
-                        <h3>Code qx</h3><span class="company-date"
-                            >Desde enero de 2026</span>
+                        <h3>{company.name}</h3><span class="company-date"
+                            >Desde {company.founded}</span>
                     </div>
-                    <p class="company-role">Cofundador</p>
-                    <p>
-                        En enero de 2026 fundé Code qx junto a unos compañeros.
-                        Nació con la visión de desarrollar y gestionar sistemas
-                        para pequeñas empresas y empresas en crecimiento.
-                    </p>
-                    <p>
-                        Queremos acompañar a estos negocios con herramientas que
-                        les ayuden a organizar su trabajo y gestionar sus
-                        operaciones a medida que crecen.
-                    </p>
+                    <p class="company-role">{company.role}</p>
+                    {company.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
                 </div>
             </article>
         </section>

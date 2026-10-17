@@ -1,17 +1,23 @@
 .skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 1.25rem; list-style: none; margin: 0; padding: 0 0 .75rem; }
 .skills-grid .skill { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 245px; padding: 4.25rem 1rem 3rem; border: 1px solid #ffffff24; border-radius: .5rem; background: #111827; transition: border-color .25s, transform .25s; }
+.skills-grid .skill-icon { display: grid; place-items: center; width: 100px; height: 100px; }
 .skills-grid img { width: 100px; height: 100px; object-fit: contain; transition: transform .8s ease; }
+.skills-grid .skill-icon-light { padding: 12px; border-radius: .5rem; background: #ffffff; }
+.skills-grid .skill-icon-light img { width: 100%; height: 100%; }
+.skills-grid .skill-mark { display: grid; place-items: center; width: 100px; height: 100px; color: #d8b4fe; font-size: 2rem; font-weight: 700; letter-spacing: -.06em; transition: transform .8s ease; }
 .skills-grid h3 { position: absolute; top: 0; left: 0; width: 100%; padding: .75rem .5rem; border-bottom: 1px solid #ffffff18; background: #1b2331; color: #f8fafc; font-size: .95rem; font-weight: 600; text-align: center; transition: background .25s; }
 .skills-grid .skill-level { position: absolute; bottom: .9rem; padding: .35rem .75rem; border: 1px solid #ffffff24; border-radius: .25rem; background: #1b2331; color: #cbd5e1; font-size: .8rem; font-weight: 500; transition: background .25s, border-color .25s; }
 .skills-grid .skill:active { border-color: #b8a0d4; }
 .skills-grid .skill:active img { transform: perspective(500px) rotateY(360deg); }
+.skills-grid .skill:active .skill-mark { transform: perspective(500px) rotateY(360deg); }
 .skills-grid .skill:active h3, .skills-grid .skill:active .skill-level { background: #72548f; border-color: #b8a0d4; }
 @media (hover: hover) {
     .skills-grid .skill:hover { border-color: #9473b2; transform: translateY(-3px); }
     .skills-grid .skill:hover img { transform: perspective(500px) rotateY(360deg); }
+    .skills-grid .skill:hover .skill-mark { transform: perspective(500px) rotateY(360deg); }
     .skills-grid .skill:hover h3, .skills-grid .skill:hover .skill-level { background: #72548f; border-color: #b8a0d4; }
 }
 @media (max-width: 1000px) { .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 700px) { .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1rem; } .skills-grid .skill { min-height: 230px; } .skills-grid img { width: 80px; height: 80px; } }
+@media (max-width: 700px) { .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1rem; } .skills-grid .skill { min-height: 230px; } .skills-grid .skill-icon, .skills-grid img, .skills-grid .skill-mark { width: 80px; height: 80px; } .skills-grid .skill-icon-light { padding: 10px; } }
 @media (max-width: 400px) { .skills-grid { grid-template-columns: 1fr; } }
-@media (prefers-reduced-motion: reduce) { .skills-grid .skill, .skills-grid img, .skills-grid h3, .skills-grid .skill-level { transition: none; } .skills-grid .skill:hover, .skills-grid .skill:hover img, .skills-grid .skill:active img { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .skills-grid .skill, .skills-grid img, .skills-grid .skill-mark, .skills-grid h3, .skills-grid .skill-level { transition: none; } .skills-grid .skill:hover, .skills-grid .skill:hover img, .skills-grid .skill:active img, .skills-grid .skill:hover .skill-mark, .skills-grid .skill:active .skill-mark { transform: none; } }

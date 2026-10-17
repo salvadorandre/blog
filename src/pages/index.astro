@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/showcase.css";
 import "../styles/pages/home.css";
+import { profile } from "../data/profile";
 ---
 
 <Layout title="André Salvador | Software Developer" description="Conoce a André Salvador, desarrollador de software y estudiante de Ingeniería en Sistemas. Explora sus proyectos y trayectoria.">
@@ -10,9 +11,9 @@ import "../styles/pages/home.css";
         <section class="hero animate__animated animate__fadeInUp" aria-labelledby="hero-title">
             <div class="hero-copy">
                 <p class="hello">Hola, qué bueno verte por aquí.</p>
-                <h1 id="hero-title">Soy André<br /><span class="accent-text">Salvador.</span></h1>
-                <p class="role">Desarrollador de software y estudiante de Ingeniería en Sistemas.</p>
-                <p class="intro">Este es mi espacio para compartir lo que voy construyendo. Me gusta aprender probando: desde una pequeña idea en JavaScript hasta una aplicación con herramientas que todavía estoy conociendo.</p>
+                <h1 id="hero-title">Soy {profile.firstName}<br /><span class="accent-text">{profile.lastName}.</span></h1>
+                <p class="role">{profile.role}</p>
+                <p class="intro">{profile.introduction}</p>
                 <div class="hero-actions">
                     <a class="primary-link" href="/portafolio">Ver mis proyectos <span aria-hidden="true">↗</span></a>
                     <a class="secondary-link" href="/CV">Más sobre mí <span aria-hidden="true">→</span></a>
@@ -21,8 +22,8 @@ import "../styles/pages/home.css";
             </div>
             <div class="portrait-wrap">
                 <figure class="portrait-card">
-                    <img src="/andre.jpg" alt="Retrato de André Salvador" width="480" height="560" fetchpriority="high" />
-                    <figcaption class="portrait-caption"><strong>André Salvador</strong><span>Entre clases, código y proyectos propios.</span></figcaption>
+                    <img src="/andre.jpg" alt={`Retrato de ${profile.name}`} width="480" height="560" fetchpriority="high" />
+                    <figcaption class="portrait-caption"><strong>{profile.name}</strong><span>{profile.homeCaption}</span></figcaption>
                 </figure>
             </div>
         </section>

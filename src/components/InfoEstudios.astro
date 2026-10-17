@@ -1,15 +1,11 @@
 ---
 import "../styles/components/education.css";
-const studies = [
-    { institution: "Universidad Mariano Gálvez", degree: "Ingeniería en Sistemas", period: "Actualidad", category: "Formación universitaria", image: "/umg.png", current: true },
-    { institution: "FunSalud", degree: "Diplomado en Desarrollo Web", period: "2023", category: "Formación complementaria", image: "/funsalud.png", current: false },
-    { institution: "Pre-universitario Galileo", degree: "Bachillerato en Computación con Orientación Científica", period: "2022–2023", category: "Educación media", image: "/galileo.jpeg", current: false },
-];
+import { education } from "../data/profile";
 ---
 
 <div class="education-grid">
-    {studies.map((study) => (
-        <article class:list={["education-card", { "current-study": study.current }]} style={`animation-delay: ${studies.indexOf(study) * 100}ms`}>
+    {education.map((study, index) => (
+        <article class:list={["education-card", { "current-study": study.current }]} style={`animation-delay: ${index * 100}ms`}>
             <div class="school-panel">
                 <span class="study-category">{study.category}</span>
                 <div class="school-logo"><img src={study.image} alt="" width="112" height="112" loading="lazy" /></div>

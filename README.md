@@ -1,57 +1,64 @@
-# Astro Starter Kit: Basics
+# Portafolio de André Salvador
+
+Sitio personal estático desarrollado con Astro. Presenta el perfil, proyectos, formación, habilidades y certificaciones de Platzi.
+
+## Requisitos
+
+- Node.js compatible con Astro 5.
+- pnpm 9 (el proyecto declara su versión en `package.json`).
+- El diseño usa CSS propio y no requiere un framework CSS.
+
+## Desarrollo
 
 ```sh
-npm create astro@latest -- --template basics
+pnpm install
+pnpm dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+El servidor local está disponible normalmente en `http://localhost:4321`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Validaciones y publicación
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+```sh
+pnpm build    # Ejecuta astro check y compila el sitio en dist/
+pnpm test     # Compila y valida rutas, enlaces, recursos locales y certificaciones
+pnpm preview  # Sirve localmente el contenido de dist/
+```
 
-## 🚀 Project Structure
+La prueba automatizada verifica las rutas generadas, los enlaces y recursos locales y la presencia de las 12 certificaciones. Para la revisión visual manual, sigue [`docs/visual-qa.md`](docs/visual-qa.md).
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+public/                 Recursos estáticos (fotografías, logos, iconos)
+src/
+├── components/          Componentes de interfaz reutilizables
+├── content/projects/    Contenido Markdown de proyectos y su esquema
+├── data/                Datos del perfil, estudios, tecnologías y certificados
+├── layouts/             Estructura de página compartida y metadatos
+├── pages/               Rutas Astro (Home, CV, portafolio, detalle y 404)
+├── scripts/             Comportamiento del navegador, como revelar tarjetas al scroll
+└── styles/
+    ├── components/      Estilos específicos de componentes
+    ├── pages/           Estilos específicos de páginas
+    ├── global.css       Fondo, accesibilidad y estilos base
+    └── tokens.css       Colores y medidas compartidos
+tests/                   Validaciones automáticas sobre el sitio generado
+docs/                    Guía de comprobación visual manual
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Cómo actualizar contenido
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Perfil, experiencia, estudios y tecnologías:** editar `src/data/profile.ts`.
+- **Certificaciones:** editar `src/data/certifications.ts`. Los diplomas enlazan a Platzi y sus vistas previas se cargan desde allí; el sitio muestra un fallback si la imagen no está disponible.
+- **Proyectos:** añadir o editar archivos Markdown en `src/content/projects/`. Cada proyecto requiere `title`, `url`, `language`, `description` e `img`. Las imágenes referenciadas deben existir en `public/`; para una demo todavía no pública se admite `url: "#"`.
+- **Estilos:** modificar tokens compartidos en `src/styles/tokens.css`; poner reglas generales en `global.css`, estilos de página en `styles/pages/` y reglas de componente en `styles/components/`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Convenciones
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-# blog
-# blog
-# blog
+- Mantener el contenido separado del marcado y de los estilos.
+- Preferir selectores acotados a la página o componente para evitar efectos colaterales.
+- Usar imágenes con texto alternativo significativo cuando comuniquen contenido; dejar `alt=""` cuando sean decorativas.
+- Respetar `prefers-reduced-motion` al añadir animaciones.
+- No guardar credenciales privadas ni tokens en archivos públicos del sitio.
+- Mantener el CSS nativo organizado por componente y página, usando `tokens.css` para valores compartidos.

@@ -1,0 +1,13 @@
+:root {
+    color-scheme: dark;
+    --color-page: #1b1a2b;
+    --color-surface: #111827;
+    --color-surface-raised: #1b2331;
+    --color-text: #f8fafc;
+    --color-text-muted: #aeb9ce;
+    --color-accent: #b8a0d4;
+    --color-accent-strong: #c4b5fd;
+    --color-border: #ffffff24;
+    --content-width: 1160px;
+    --content-wide-width: 1600px;
+}
