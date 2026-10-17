@@ -1,13 +1,13 @@
-.skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; list-style: none; margin: 0; padding: 0 0 .75rem; }
-.skills-grid .skill { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 260px; padding: 4.5rem 1rem 3rem; border: 2px solid #4b5563; border-radius: .75rem; background: #111827; transition: border-color .35s, transform .35s; }
+.skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 1.25rem; list-style: none; margin: 0; padding: 0 0 .75rem; }
+.skills-grid .skill { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 245px; padding: 4.25rem 1rem 3rem; border: 1px solid #ffffff24; border-radius: .5rem; background: #111827; transition: border-color .25s, transform .25s; }
 .skills-grid img { width: 100px; height: 100px; object-fit: contain; transition: transform .8s ease; }
-.skills-grid h3 { position: absolute; top: 1rem; left: 0; width: 100%; padding: .6rem .5rem; background: #374151; color: #f8fafc; font-size: 1rem; font-weight: 600; text-align: center; transition: background .35s; }
-.skills-grid .skill-level { position: absolute; bottom: -.8rem; padding: .5rem 1rem; border: 1px solid #64748b; border-radius: .35rem; background: #374151; color: #f8fafc; font-size: .85rem; font-weight: 600; transition: background .35s, border-color .35s; }
+.skills-grid h3 { position: absolute; top: 0; left: 0; width: 100%; padding: .75rem .5rem; border-bottom: 1px solid #ffffff18; background: #1b2331; color: #f8fafc; font-size: .95rem; font-weight: 600; text-align: center; transition: background .25s; }
+.skills-grid .skill-level { position: absolute; bottom: .9rem; padding: .35rem .75rem; border: 1px solid #ffffff24; border-radius: .25rem; background: #1b2331; color: #cbd5e1; font-size: .8rem; font-weight: 500; transition: background .25s, border-color .25s; }
 .skills-grid .skill:active { border-color: #b8a0d4; }
 .skills-grid .skill:active img { transform: perspective(500px) rotateY(360deg); }
 .skills-grid .skill:active h3, .skills-grid .skill:active .skill-level { background: #72548f; border-color: #b8a0d4; }
 @media (hover: hover) {
-    .skills-grid .skill:hover { border-color: #b8a0d4; transform: translateY(-4px); }
+    .skills-grid .skill:hover { border-color: #9473b2; transform: translateY(-3px); }
     .skills-grid .skill:hover img { transform: perspective(500px) rotateY(360deg); }
     .skills-grid .skill:hover h3, .skills-grid .skill:hover .skill-level { background: #72548f; border-color: #b8a0d4; }
 }

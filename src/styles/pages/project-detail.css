@@ -1,0 +1,22 @@
+.project-detail { padding-top: 2rem; }
+.project-detail .back-nav a { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; color: #aeb9ce; font-size: .9rem; }
+.project-detail .back-nav a:hover, .project-detail figcaption a:hover { color: #d8b4fe; }
+.project-detail .project-header { padding: 2rem 0 2.5rem; }
+.project-detail h1 { margin-top: .8rem; font-size: clamp(2.25rem, 4.5vw, 4.5rem); font-weight: 750; line-height: 1.12; letter-spacing: -.045em; overflow-wrap: anywhere; }
+.project-detail .project-layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.project-detail .project-preview { min-width: 0; overflow: hidden; border: 1px solid #ffffff24; border-radius: .6rem; background: #111827; }
+.project-detail .preview-image { padding: clamp(.5rem, 1.5vw, 1.25rem); background: #1b2331; }
+.project-detail .preview-image img { display: block; width: 100%; height: auto; }
+.project-detail figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; padding: .65rem 1.25rem; color: #94a3b8; font-size: .8rem; border-top: 1px solid #ffffff12; }
+.project-detail figcaption a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: #c4b5fd; }
+.project-detail .project-info { padding: .5rem 0; }
+.project-detail h2 { font-size: 1rem; font-weight: 600; color: #f1f5f9; }
+.project-detail .description { margin-top: 1rem; max-width: 48ch; font-size: 1.05rem; line-height: 1.85; color: #aeb9ce; }
+.project-detail .technologies { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #ffffff24; }
+.project-detail .technologies ul { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; margin: 1rem 0 0; padding: 0; }
+.project-detail .technologies li { padding: .45rem .8rem; border: 1px solid #b8a0d43d; border-radius: .35rem; background: #211c2c; color: #d0bddf; font-size: .8rem; }
+.project-detail .project-actions { margin-top: 2rem; }
+.project-detail .demo-note { margin-top: .75rem; color: #94a3b8; font-size: .8rem; line-height: 1.6; }
+.project-detail .project-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #ffffff24; }
+.project-detail .project-bottom p { color: #aeb9ce; font-size: .95rem; }
+@media (max-width: 800px) { .project-detail { padding-top: 1rem; } .project-detail .project-header { padding: 1.5rem 0; } .project-detail .project-layout { grid-template-columns: 1fr; } .project-detail .description { max-width: none; } .project-detail .project-bottom { margin-top: 2rem; } }
