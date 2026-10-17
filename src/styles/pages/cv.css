@@ -24,3 +24,4 @@
 @media (hover: hover) { .cv .company-card { transition: transform .2s, border-color .2s; } .cv .company-card:hover { transform: translateY(-2px); } }
 @media (max-width: 800px) { .cv .cv-header { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; } .cv .company-card { grid-template-columns: 160px minmax(0, 1fr); gap: 1.5rem; padding: 1.5rem; } }
 @media (max-width: 600px) { .cv .company-card { grid-template-columns: 1fr; padding: 1.25rem; } .cv .company-logo { width: 160px; } .cv .cv-section { padding: 1.5rem 0; } }
+@media (prefers-reduced-motion: reduce) { .cv .company-card { transition: none; } .cv .company-card:hover { transform: none; } }

@@ -1,0 +1,22 @@
+---
+import { certifications } from "../data/certifications";
+import "../styles/components/certifications.css";
+---
+
+<div class="certification-grid">
+    {certifications.map((certification) => (
+        <article class="certification-card">
+            <a class="certificate-preview" href={certification.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir diploma: ${certification.title}`}>
+                <img src={certification.image} alt={`Previsualización del certificado: ${certification.title}`} loading="lazy" width="1200" height="630" />
+                <span aria-hidden="true">↗</span>
+            </a>
+            <div class="certification-content">
+                <p class="certification-category">{certification.category}</p>
+                <h3>{certification.title}</h3>
+                <a href={certification.url} target="_blank" rel="noopener noreferrer" aria-label={`Ver certificado: ${certification.title} en Platzi`}>
+                    Ver certificado <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </article>
+    ))}
+</div>

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import Carousel from "../components/Carousel.astro";
 import InfoEstudios from "../components/InfoEstudios.astro";
+import Certifications from "../components/Certifications.astro";
 import "../styles/showcase.css";
 import "../styles/pages/cv.css";
 
@@ -39,6 +40,15 @@ export const prerender = true;
         <section class="cv-section" aria-labelledby="education-title">
             <div class="section-heading"><p class="eyebrow">Formación</p><h2 id="education-title">Mis estudios</h2></div>
             <InfoEstudios />
+        </section>
+
+        <section class="cv-section" aria-labelledby="certifications-title">
+            <div class="section-heading">
+                <p class="eyebrow">Aprendizaje continuo</p>
+                <h2 id="certifications-title">Certificaciones</h2>
+                <p class="section-intro">Cursos completados en Platzi. Cada enlace abre el diploma correspondiente.</p>
+            </div>
+            <Certifications />
         </section>
 
         <section class="cv-section" aria-labelledby="skills-title">
