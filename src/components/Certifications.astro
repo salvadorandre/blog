@@ -5,7 +5,7 @@ import "../styles/components/certifications.css";
 
 <div class="certification-grid">
     {certifications.map((certification) => (
-        <article class="certification-card">
+        <article class="certification-card" style={`animation-delay: ${Math.min(certifications.indexOf(certification), 7) * 80}ms`}>
             <a class="certificate-preview" href={certification.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir diploma: ${certification.title}`}>
                 <img src={certification.image} alt={`Previsualización del certificado: ${certification.title}`} loading="lazy" width="1200" height="630" />
                 <span aria-hidden="true">↗</span>

@@ -8,15 +8,15 @@ import "../styles/pages/portfolio.css";
 const projects = await getCollection("projects");
 ---
 
-<Layout title="Portafolio | André Salvador">
+<Layout title="Portafolio | André Salvador" description="Proyectos web de André Salvador, con sus tecnologías, descripciones y enlaces a demos disponibles.">
     <main class="showcase portfolio portfolio-page motion-page">
-        <header class="portfolio-header">
+        <header class="portfolio-header animate__animated animate__fadeInUp">
             <p class="eyebrow">Portafolio de desarrollo</p>
             <h1>Proyectos y<br /><span class="accent-text">aplicaciones web.</span></h1>
         </header>
         <section class="projects-grid" aria-label="Proyectos">
             {projects.map(({ data, slug }, index) => (
-                <article class="project-card">
+                <article class="project-card" style={`animation-delay: ${Math.min(index, 7) * 80}ms`}>
                     <a class="project-image" href={`/proyecto/${slug}`} aria-label={`Ver proyecto ${data.title}`}>
                         <img src={`/${data.img}`} alt={`Vista previa de ${data.title}`} loading="lazy" width="720" height="450" />
                     </a>

@@ -18,7 +18,7 @@ const skills = [
 
 <ul class="skills-grid" aria-label="Tecnologías y nivel de conocimiento">
     {skills.map((skill) => (
-        <li class="skill">
+        <li class="skill" style={`animation-delay: ${Math.min(skills.indexOf(skill), 7) * 60}ms`}>
             <h3>{skill.name}</h3>
             <img src={`/${skill.image}`} alt="" width="100" height="100" loading="lazy" />
             <p class="skill-level">{skill.level}</p>

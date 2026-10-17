@@ -4,6 +4,10 @@
 .cv .header-summary a { display: inline-flex; gap: .75rem; align-items: center; min-height: 44px; margin-top: .75rem; color: #d0bddf; font-size: .9rem; }
 .cv .header-summary a:hover { color: #f1e5ff; }
 .cv .cv-section { padding: 2rem 0; border-top: 1px solid #ffffff24; }
+.cv .cv-toc { position: sticky; top: .75rem; z-index: 2; display: flex; flex-wrap: wrap; gap: .4rem; width: fit-content; max-width: 100%; margin: 0 0 1.5rem; padding: .35rem; border: 1px solid #ffffff24; border-radius: .4rem; background: #111827ed; }
+.cv .cv-toc a { display: inline-flex; align-items: center; min-height: 40px; padding: .4rem .7rem; border-radius: .25rem; color: #cbd5e1; font-size: .8rem; }
+.cv .cv-toc a:hover { color: #f8fafc; background: #30263f; }
+.cv .cv-toc a:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 2px; }
 .cv .section-heading { margin-bottom: 1.5rem; }
 .cv .section-heading h2 { margin-top: .6rem; font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 650; letter-spacing: -.025em; }
 .cv .section-intro { margin-top: .65rem; color: #aeb9ce; line-height: 1.7; }

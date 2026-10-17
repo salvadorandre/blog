@@ -9,7 +9,7 @@ const studies = [
 
 <div class="education-grid">
     {studies.map((study) => (
-        <article class:list={["education-card", { "current-study": study.current }]}>
+        <article class:list={["education-card", { "current-study": study.current }]} style={`animation-delay: ${studies.indexOf(study) * 100}ms`}>
             <div class="school-panel">
                 <span class="study-category">{study.category}</span>
                 <div class="school-logo"><img src={study.image} alt="" width="112" height="112" loading="lazy" /></div>

@@ -11,9 +11,9 @@ const companyLogo = "/logo.png";
 export const prerender = true;
 ---
 
-<Layout title="CV | André Salvador">
+<Layout title="CV | André Salvador" description="Formación, experiencia como cofundador de Code qx, certificaciones de Platzi y tecnologías de André Salvador.">
     <main class="showcase cv motion-page">
-        <header class="cv-header">
+        <header class="cv-header animate__animated animate__fadeInUp">
             <div>
                 <p class="eyebrow">Mi recorrido</p>
                 <h1>
@@ -23,7 +23,14 @@ export const prerender = true;
             </div>
         </header>
 
-        <section class="cv-section" aria-labelledby="experience-title">
+        <nav class="cv-toc" aria-label="Secciones del currículum">
+            <a href="#experience-title">Emprendimiento</a>
+            <a href="#education-title">Estudios</a>
+            <a href="#certifications-title">Certificaciones</a>
+            <a href="#skills-title">Tecnologías</a>
+        </nav>
+
+        <section class="cv-section animate__animated animate__fadeInUp" aria-labelledby="experience-title">
             <div class="section-heading">
                 <p class="eyebrow">Emprendimiento</p><h2 id="experience-title">
                     Un proyecto compartido
@@ -69,7 +76,7 @@ export const prerender = true;
             </article>
         </section>
 
-        <section class="cv-section" aria-labelledby="education-title">
+        <section class="cv-section animate__animated animate__fadeInUp" aria-labelledby="education-title">
             <div class="section-heading">
                 <p class="eyebrow">Formación</p><h2 id="education-title">
                     Mis estudios
@@ -78,7 +85,7 @@ export const prerender = true;
             <InfoEstudios />
         </section>
 
-        <section class="cv-section" aria-labelledby="certifications-title">
+        <section class="cv-section animate__animated animate__fadeInUp" aria-labelledby="certifications-title">
             <div class="section-heading">
                 <p class="eyebrow">Aprendizaje continuo</p>
                 <h2 id="certifications-title">Certificaciones</h2>
@@ -86,7 +93,7 @@ export const prerender = true;
             <Certifications />
         </section>
 
-        <section class="cv-section" aria-labelledby="skills-title">
+        <section class="cv-section animate__animated animate__fadeInUp" aria-labelledby="skills-title">
             <div class="section-heading">
                 <p class="eyebrow">Herramientas</p><h2 id="skills-title">
                     Tecnologías con las que trabajo

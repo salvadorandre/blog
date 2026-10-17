@@ -1,0 +1,7 @@
+.not-found { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2rem; min-height: 62vh; padding-block: 3rem; }
+.not-found-content { max-width: 42rem; }
+.not-found h1 { margin-top: 1rem; font-size: clamp(2.75rem, 6vw, 5rem); font-weight: 800; line-height: 1.08; letter-spacing: -.055em; }
+.not-found-content > p:not(.eyebrow) { max-width: 42ch; margin-top: 1.25rem; color: #aeb9ce; line-height: 1.8; }
+.not-found-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2rem; }
+.not-found-mark { color: #ffffff14; font-size: clamp(6rem, 18vw, 15rem); font-weight: 800; letter-spacing: -.1em; line-height: 1; }
+@media (max-width: 600px) { .not-found { grid-template-columns: 1fr; min-height: 55vh; } .not-found-mark { display: none; } }
