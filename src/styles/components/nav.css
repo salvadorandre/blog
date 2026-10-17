@@ -1,0 +1,8 @@
+.site-nav { background: #1f2937; border-bottom: 1px solid #ffffff18; }
+.site-nav .nav-links { display: flex; justify-content: center; align-items: center; gap: clamp(1rem, 4vw, 3rem); padding: .75rem 1rem; }
+.site-nav a { position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .5rem .65rem; color: #cbd5e1; font-size: .95rem; font-weight: 500; transition: color .2s; }
+.site-nav a::after { content: ''; position: absolute; bottom: 0; left: .65rem; right: .65rem; height: 2px; border-radius: 2px; background: #60a5fa; transform: scaleX(0); transition: transform .2s; }
+.site-nav a:hover, .site-nav a.active { color: #f8fafc; }
+.site-nav a:hover::after, .site-nav a.active::after { transform: scaleX(1); }
+.site-nav a:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 3px; border-radius: .25rem; }
+@media (prefers-reduced-motion: reduce) { .site-nav a, .site-nav a::after { transition: none; } }

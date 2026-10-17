@@ -1,0 +1,49 @@
+.showcase {
+    width: min(1160px, calc(100% - 3rem));
+    margin-inline: auto;
+    color: #f8fafc;
+}
+
+.showcase.portfolio {
+    width: min(1600px, calc(100% - clamp(2rem, 6vw, 6rem)));
+}
+
+.showcase .eyebrow {
+    color: #c4b5fd;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.showcase .accent-text {
+    color: #b8a0d4;
+}
+
+.showcase .primary-link,
+.showcase .secondary-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .9rem;
+    padding: .9rem 1.2rem;
+    border: 1px solid #ffffff26;
+    border-radius: .35rem;
+    font-size: .85rem;
+    font-weight: 600;
+    transition: background .2s, border-color .2s;
+}
+
+.showcase .primary-link { background: #72548f; border-color: #9473b2; }
+.showcase .primary-link:hover { background: #7e22ce; }
+.showcase .secondary-link { background: #111827a6; }
+.showcase .secondary-link:hover { border-color: #c084fc; background: #1e293b; }
+.showcase a:focus-visible { outline: 3px solid #c084fc; outline-offset: 5px; }
+
+@media (max-width: 400px) {
+    .showcase { width: calc(100% - 2rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .showcase *, .showcase *::before, .showcase *::after { animation: none !important; transition: none !important; }
+}

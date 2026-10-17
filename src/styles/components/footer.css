@@ -1,0 +1,12 @@
+.site-footer { margin-top: 4rem; background: #111827; border-top: 1px solid #ffffff24; }
+.site-footer .footer-content { width: min(1160px, calc(100% - 3rem)); margin-inline: auto; padding: 2rem 0; }
+.site-footer .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .65rem; }
+.site-footer .social-links a { display: inline-flex; flex-direction: row-reverse; gap: .6rem; align-items: center; justify-content: center; min-height: 44px; padding: .6rem .8rem; font-size: .8rem; color: #cbd5e1; border: 1px solid #ffffff24; border-radius: .35rem; background: #1b2331; transition: color .2s, border-color .2s, transform .2s; }
+.site-footer .social-links svg { width: 18px; height: 18px; }
+.site-footer .social-links a:hover { border-color: currentColor; transform: translateY(-2px); }
+.site-footer .social-links .facebook:hover { color: #60a5fa; }
+.site-footer .social-links .instagram:hover { color: #f9a8d4; }
+.site-footer .social-links .github:hover { color: #f8fafc; }
+.site-footer a:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 4px; border-radius: .25rem; }
+@media (max-width: 400px) { .site-footer .footer-content { width: calc(100% - 2rem); } }
+@media (prefers-reduced-motion: reduce) { .site-footer .social-links a { transition: none; } .site-footer .social-links a:hover { transform: none; } }

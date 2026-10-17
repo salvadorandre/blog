@@ -1,90 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/showcase.css";
+import "../styles/pages/home.css";
 ---
 
-<Layout title="Inicio">
-
-	<main  class="animate__animated animate__fadeInLeft flex flex-wrap flex-row justify-center items-center mb-10">
-		<img 
-			class="object-cover object-center rounded-full h-72 w-72 mt-11"
-			src="andre.jpg"
-			alt="nature image"
-		/>
-		<div class="mt-5 flex flex-col justify-center">
-			<div class="text-xl py-1 text-center">Hola 👋</div>
-			<div class="text-5xl font-bold text-center">Yo soy André Salvador</div>
-			<div class="text-3xl py-3 font-bold text-center">Software Developer</div>
-			<div class="py-2">
-				<p class="text-lg text-justify">
-					Este es mi <b>Blog</b> donde mostrare cada una de mis caracteristicas
-					que me destacan como desarrollador de software y cada uno de
-					los proyectos que he desarrollado a lo largo de mi expericencia.
-				</>
-			</div>
-		</div>
-	</main>
-	<Footer/>
+<Layout title="André Salvador | Software Developer">
+    <main class="showcase home">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="hello">Hola, qué bueno verte por aquí.</p>
+                <h1 id="hero-title">Soy André<br /><span class="accent-text">Salvador.</span></h1>
+                <p class="role">Desarrollador de software y estudiante de Ingeniería en Sistemas.</p>
+                <p class="intro">Este es mi espacio para compartir lo que voy construyendo. Me gusta aprender probando: desde una pequeña idea en JavaScript hasta una aplicación con herramientas que todavía estoy conociendo.</p>
+                <div class="hero-actions">
+                    <a class="primary-link" href="/portafolio">Ver mis proyectos <span aria-hidden="true">↗</span></a>
+                    <a class="secondary-link" href="/CV">Más sobre mí <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+            <div class="portrait-wrap">
+                <figure class="portrait-card">
+                    <img src="/andre.jpg" alt="Retrato de André Salvador" width="480" height="560" fetchpriority="high" />
+                    <figcaption class="portrait-caption"><strong>André Salvador</strong><span>Entre clases, código y proyectos propios.</span></figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="explore-grid" aria-label="Explora mi trabajo y formación">
+            <a class="explore-card" href="/portafolio">
+                <span class="eyebrow">Lo que construyo</span>
+                <h2>Mis proyectos <span aria-hidden="true">↗</span></h2>
+                <p>Lo que he hecho para practicar, probar herramientas y resolver mis propias dudas.</p>
+            </a>
+            <a class="explore-card" href="/CV">
+                <span class="eyebrow">Mi recorrido</span>
+                <h2>Lo que estoy aprendiendo <span aria-hidden="true">↗</span></h2>
+                <p>Mis estudios y las tecnologías con las que he trabajado hasta ahora.</p>
+            </a>
+        </section>
+    </main>
+    <Footer />
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(
-			rgba(var(--accent-dark), 66%),
-			rgba(var(--accent-dark), 33%)
-		);
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>

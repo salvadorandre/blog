@@ -1,10 +1,19 @@
-<!-- component -->
-<nav class="bg-white shadow dark:bg-gray-800">
-    <div class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300">
-        <a href="/" class="text-gray-800 dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6">home</a>
+---
+import "../styles/components/nav.css";
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const links = [
+    { href: "/", label: "Home" },
+    { href: "/portafolio", label: "Portafolio" },
+    { href: "/CV", label: "CV" },
+];
+---
 
-        <a href="/portafolio" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Portafolio</a>
-
-        <a href="/CV" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">CV</a>
+<nav class="site-nav" aria-label="Navegación principal">
+    <div class="nav-links">
+        {links.map(({ href, label }) => {
+            const exact = pathname === href;
+            const active = exact || (href === "/portafolio" && pathname.startsWith("/proyecto/"));
+            return <a href={href} class:list={[{ active }]} aria-current={exact ? "page" : active ? "location" : undefined}>{label}</a>;
+        })}
     </div>
 </nav>

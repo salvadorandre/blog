@@ -1,183 +1,27 @@
 ---
-
+import "../styles/components/skills.css";
+const skills = [
+    { name: "HTML5", image: "html.svg", level: "Avanzado" },
+    { name: "CSS3", image: "Css.svg", level: "Medio" },
+    { name: "JavaScript", image: "Js.svg", level: "Medio" },
+    { name: "Tailwind CSS", image: "tailwind.svg", level: "Medio" },
+    { name: "Bootstrap 5", image: "Boostrap.svg", level: "Medio" },
+    { name: "Laravel", image: "Laravel.svg", level: "Medio" },
+    { name: "jQuery", image: "Jquery.svg", level: "Medio" },
+    { name: "React", image: "React.svg", level: "Básico" },
+    { name: "Angular", image: "Angular.svg", level: "Básico" },
+    { name: "Django", image: "django.svg", level: "Básico" },
+    { name: "Livewire", image: "Livewire.svg", level: "Básico" },
+    { name: "PHP", image: "PHP.svg", level: "Medio" },
+];
 ---
 
-<section class="item-group" >
-    <div class="item headline">
-        <span><h4>HTML5</h4></span>
-        <img class="svg-items" src="html.svg" alt="" />
-        <button class="item-button">Avanzado</button>
-    </div>
-    <div class="item">
-        <span><h4>CSS3</h4></span>
-        <img class="svg-items" src="Css.svg" alt="" />
-        <button class="item-button">Medio</button>
-    </div>
-    <div class="item">
-        <span><h4>JS</h4></span>
-        <img class="svg-items" src="Js.svg" alt="" />
-        <button class="item-button">Medio</button>
-    </div>
-    <div class="item">
-        <span><h4>TailwindCss</h4></span>
-        <img class="svg-items" src="tailwind.svg" alt="" />
-        <button class="item-button">Medio</button>
-    </div>
-    <div class="item">
-        <span><h4>Bootstrap 5</h4></span>
-        <img class="svg-items" src="Boostrap.svg" alt="" />
-        <button class="item-button">Medio</button>
-    </div>
-    <div class="item">
-        <span><h4>Laravel</h4></span>
-        <img class="svg-items" src="Laravel.svg" alt="" />
-        <button class="item-button">Medio</button>
-    </div>
-    <div class="item">
-        <span><h4>Jquery</h4></span>
-        <img class="svg-items" src="Jquery.svg" alt="" />
-        <button class="item-button">Medio</button>
-    </div>
-    <div class="item">
-        <span><h4>React</h4></span>
-        <img class="svg-items" src="React.svg" alt="" />
-        <button class="item-button">Básico</button>
-    </div>
-    <div class="item">
-        <span><h4>Angular</h4></span>
-        <img class="svg-items" src="Angular.svg" alt="" />
-        <button class="item-button">Básico</button>
-    </div>
-    <div class="item">
-        <span><h4>Django</h4></span>
-        <img class="svg-items" src="django.svg" alt="" />
-        <button class="item-button">Básico</button>
-    </div>
-    <div class="item">
-        <span><h4>Livewire</h4></span>
-        <img class="svg-items" src="Livewire.svg" alt="" />
-        <button class="item-button">Básico</button>
-    </div>
-    <div class="item">
-        <span><h4>PHP</h4></span>
-        <img class="svg-items" src="PHP.svg" alt="" />
-        <button class="item-button">Medio</button>
-    </div>
-</section>
-
-<script>
-    
-</script>
-
-<style>
-     .item-group {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 30px;
-    }
-
-    .item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border: 3px solid #646464;
-        border-radius: 5%;
-        width: 250px;
-        height: 275px;
-        transition: .8s ease;
-        margin: 10px;
-        position: relative;
-    }
-
-    span {
-        display: block;
-        background: #646464;
-        width: 100%;
-        text-align: center;
-        font-weight: bold;
-        position: absolute;
-        top: 6%;
-        padding: 5px;
-    }
-
-    h4 {
-        font-size: 20px;
-    }
-
-    .svg-items {
-        width: 100px;
-        height: 100px;
-        transition: .8s ease;
-    }
-
-    .item-button {
-        background: #646464;
-        color: white;
-        padding: 8px 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        position: absolute;
-        font-weight: bold;
-        top: 92%;
-        transition: .8s ease;
-    }
-
-    .item:hover {
-        .svg-items {
-            transform: perspective(500px) rotateY(360deg);
-        }
-
-        span {
-            background: rgb(155, 33, 226);
-        }
-
-        .item-button {
-            background: linear-gradient(
-                90deg,
-                rgb(155, 33, 226),
-                rgb(155, 33, 226)
-            );
-        }
-
-        border: 3px solid rgb(155, 33, 226);
-    }
-    .item:active {
-        .svg-items {
-            transform: perspective(500px) rotateY(360deg);
-        }
-
-        span {
-            background: rgb(155, 33, 226);
-        }
-
-        .item-button {
-            background: linear-gradient(
-                90deg,
-                rgb(155, 33, 226),
-                rgb(155, 33, 226)
-            );
-        }
-
-        border: 3px solid rgb(155, 33, 226);
-    }
-
-    @media (max-width: 1024px) {
-        .item-group {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .item-group {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    @media (max-width: 500px) {
-        .item-group {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
+<ul class="skills-grid" aria-label="Tecnologías y nivel de conocimiento">
+    {skills.map((skill) => (
+        <li class="skill">
+            <h3>{skill.name}</h3>
+            <img src={`/${skill.image}`} alt="" width="100" height="100" loading="lazy" />
+            <p class="skill-level">{skill.level}</p>
+        </li>
+    ))}
+</ul>

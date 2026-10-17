@@ -3,56 +3,48 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import Carousel from "../components/Carousel.astro";
 import InfoEstudios from "../components/InfoEstudios.astro";
+import "../styles/showcase.css";
+import "../styles/pages/cv.css";
+
+const companyLogo = "/logo.png";
 export const prerender = true;
 ---
 
-<Layout title="CV">
-    <main>
-        <section>
-            <div class="py-8 px-4 flex flex-col justify-center items-center">
-                <div class="max-w-screen-md mb-8 lg:mb-16">
-                    <h2
-                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
-                    >
-                        ESTUDIOS
-                    </h2>
-                </div>
-                <InfoEstudios />
+<Layout title="CV | André Salvador">
+    <main class="showcase cv">
+        <header class="cv-header">
+            <div>
+                <p class="eyebrow">Mi recorrido</p>
+                <h1>Lo que aprendo.<br /><span class="accent-text">Lo que construyo.</span></h1>
             </div>
+        </header>
+
+        <section class="cv-section" aria-labelledby="experience-title">
+            <div class="section-heading"><p class="eyebrow">Emprendimiento</p><h2 id="experience-title">Un proyecto compartido</h2></div>
+            <article class="company-card">
+                <div class="company-logo">
+                    {companyLogo ? <img src={companyLogo} alt="Logo de Code qx" width="200" height="200" /> : (
+                        <div class="logo-placeholder"><span>Code qx</span><small>Espacio para el logo</small></div>
+                    )}
+                </div>
+                <div class="company-copy">
+                    <div class="company-heading"><h3>Code qx</h3><span class="company-date">Desde enero de 2026</span></div>
+                    <p class="company-role">Cofundador</p>
+                    <p>En enero de 2026 fundé Code qx junto a unos compañeros. Nació con la visión de desarrollar y gestionar sistemas para pequeñas empresas y empresas en crecimiento.</p>
+                    <p>Queremos acompañar a estos negocios con herramientas que les ayuden a organizar su trabajo y gestionar sus operaciones a medida que crecen.</p>
+                </div>
+            </article>
         </section>
 
-        <section>
-            <div
-                class="py-8 px-4 flex flex-col items-center justify-center sm:py-10 lg:px-2"
-            >
-                <div class="max-w-screen-xl mb-8 lg:mb-16">
-                    <h2
-                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
-                    >
-                        SKILLS
-                    </h2>
-                </div>
+        <section class="cv-section" aria-labelledby="education-title">
+            <div class="section-heading"><p class="eyebrow">Formación</p><h2 id="education-title">Mis estudios</h2></div>
+            <InfoEstudios />
+        </section>
 
-                <Carousel />
-
-            </div>
+        <section class="cv-section" aria-labelledby="skills-title">
+            <div class="section-heading"><p class="eyebrow">Herramientas</p><h2 id="skills-title">Tecnologías con las que trabajo</h2><p class="section-intro">Mi nivel actual en las herramientas que he ido aprendiendo y utilizando.</p></div>
+            <Carousel />
         </section>
     </main>
-
-    
-
     <Footer />
-
-
-
 </Layout>
-
-<style>
-    .cards-info {
-        transition: 0.3s;
-    }
-
-    .cards-info:hover {
-        transform:matrix(1.05, 0, 0, 1.05, 0, 0);
-    }
-</style>

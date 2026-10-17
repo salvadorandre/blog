@@ -1,10 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/showcase.css";
 
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
-
     return projects.map((project) => ({
         params: { id: project.slug },
         props: { project },
@@ -12,52 +13,82 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { data, slug } = project;
-const { title, description, img, url, language } = data;
+const { title, description, img, url, language } = project.data;
 ---
 
-<Layout title=`${title}`>
-    <main class="flex flex-row justify-center items-center">
-        <section>
-            <div
-                class="container min-h-screen px-6 py-12 mx-auto lg:flex lg:items-center lg:justify-center lg:gap-12"
-            >
-                <div class="w-full lg:w-96">
-                    <p
-                        class="text-lg font-medium text-blue-500 dark:text-blue-400"
-                    >
-                        {language}
-                    </p>
-                    <h1
-                        class="mt-3 text-3xl font-semibold text-gray-800 dark:text-white md:text-5xl"
-                    >
-                        {title}
-                    </h1>
-                    <p class="mt-4 text-gray-300 dark:text-gray-300">
-                        {description}
-                    </p>
-
-                    <div class="flex items-center mt-6 gap-x-3">
-                        <a
-                            class="text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                            href={url}
-                            target="_blank">Ir a la demo</a
-                        >
-                        <a
-                            class="text-center focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-                            href="/portafolio">Regresar al portafolio</a
-                        >
-                    </div>
+<Layout title={`${title} | André Salvador`}>
+    <main class="showcase portfolio project-detail">
+        <nav class="back-nav" aria-label="Volver al portafolio">
+            <a href="/portafolio"><span aria-hidden="true">←</span> Todos los proyectos</a>
+        </nav>
+        <header class="project-header">
+            <p class="eyebrow">Portafolio / Detalle del proyecto</p>
+            <h1>{title}</h1>
+        </header>
+        <div class="project-layout">
+            <figure class="project-preview">
+                <div class="preview-image">
+                    <img src={`/${img}`} alt={`Vista de la aplicación ${title}`} fetchpriority="high" />
                 </div>
-
-                <div class="relative w-full mt-12 lg:w-1/2 lg:mt-0">
-                    <img
-                        class="w-full max-w-lg lg:mx-auto"
-                        src={`/${img}`}
-                        alt={title}
-                    />
+                <figcaption>
+                    <span>Vista del proyecto</span>
+                    <a href={`/${img}`} target="_blank" rel="noopener noreferrer" aria-label={`Ver imagen completa de ${title} en una nueva pestaña`}>Ampliar imagen <span aria-hidden="true">↗</span></a>
+                </figcaption>
+            </figure>
+            <aside class="project-info" aria-label="Información del proyecto">
+                <section aria-labelledby="about-project">
+                    <h2 id="about-project">Sobre este proyecto</h2>
+                    <p class="description">{description}</p>
+                </section>
+                <section class="technologies" aria-labelledby="project-technologies">
+                    <h2 id="project-technologies">Tecnologías utilizadas</h2>
+                    <ul>{language.split(",").map((technology) => <li>{technology.trim()}</li>)}</ul>
+                </section>
+                <div class="project-actions">
+                    {url !== "#" ? (
+                        <>
+                            <a class="primary-link" href={url} target="_blank" rel="noopener noreferrer">Probar la demo <span aria-hidden="true">↗</span></a>
+                            <p class="demo-note">Se abre en una nueva pestaña.</p>
+                        </>
+                    ) : <p class="demo-note">Este proyecto todavía no tiene una demo pública.</p>}
                 </div>
-            </div>
-        </section>
+            </aside>
+        </div>
+        <div class="project-bottom">
+            <p>Más de lo que he construido</p>
+            <a class="secondary-link" href="/portafolio">Seguir explorando <span aria-hidden="true">→</span></a>
+        </div>
     </main>
+    <Footer />
 </Layout>
+
+<style>
+    .project-detail { padding-top: 2rem; }
+    .back-nav a { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; color: #aeb9ce; font-size: .9rem; }
+    .back-nav a:hover, figcaption a:hover { color: #d8b4fe; }
+    .project-header { padding: 2rem 0 2.5rem; }
+    h1 { margin-top: .8rem; font-size: clamp(2.25rem, 4.5vw, 4.5rem); font-weight: 750; line-height: 1.12; letter-spacing: -.045em; overflow-wrap: anywhere; }
+    .project-layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+    .project-preview { min-width: 0; overflow: hidden; border: 1px solid #ffffff24; border-radius: .6rem; background: #111827; }
+    .preview-image { padding: clamp(.5rem, 1.5vw, 1.25rem); background: #1b2331; }
+    .preview-image img { display: block; width: 100%; height: auto; }
+    figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; padding: .65rem 1.25rem; color: #94a3b8; font-size: .8rem; border-top: 1px solid #ffffff12; }
+    figcaption a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: #c4b5fd; }
+    .project-info { padding: .5rem 0; }
+    h2 { font-size: 1rem; font-weight: 600; color: #f1f5f9; }
+    .description { margin-top: 1rem; max-width: 48ch; font-size: 1.05rem; line-height: 1.85; color: #aeb9ce; }
+    .technologies { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #ffffff24; }
+    .technologies ul { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; margin: 1rem 0 0; padding: 0; }
+    .technologies li { padding: .45rem .8rem; border: 1px solid #b8a0d43d; border-radius: .35rem; background: #211c2c; color: #d0bddf; font-size: .8rem; }
+    .project-actions { margin-top: 2rem; }
+    .demo-note { margin-top: .75rem; color: #94a3b8; font-size: .8rem; line-height: 1.6; }
+    .project-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #ffffff24; }
+    .project-bottom p { color: #aeb9ce; font-size: .95rem; }
+    @media (max-width: 800px) {
+        .project-detail { padding-top: 1rem; }
+        .project-header { padding: 1.5rem 0; }
+        .project-layout { grid-template-columns: 1fr; }
+        .description { max-width: none; }
+        .project-bottom { margin-top: 2rem; }
+    }
+</style>

@@ -1,0 +1,33 @@
+.home .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; padding: clamp(2.5rem, 5vw, 4.5rem) 0; }
+.home .hero-copy { max-width: 36rem; }
+.home .hello { margin: 0 0 1.5rem; color: #cbd5e1; font-size: 1rem; }
+.home h1 { font-size: clamp(2.7rem, 5.2vw, 4.6rem); line-height: 1.08; letter-spacing: -.055em; font-weight: 800; }
+.home .role { margin-top: 1.5rem; max-width: 28rem; color: #e2e8f0; font-size: 1.15rem; line-height: 1.6; }
+.home .intro { margin-top: 1.25rem; max-width: 48ch; color: #aeb9ce; line-height: 1.8; }
+.home .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.home .portrait-wrap { position: relative; padding: .75rem; width: 100%; max-width: 450px; justify-self: end; }
+.home .portrait-card { position: relative; padding: .7rem .7rem 0; border: 1px solid #d6d0c4; border-radius: .2rem; background: #e8e2d6; transform: rotate(2deg); box-shadow: 5px 8px 0 #0003; }
+.home .portrait-card img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center; }
+.home .portrait-caption { padding: 1rem .5rem 1.2rem; display: grid; gap: .35rem; }
+.home .portrait-caption strong { font-size: 1.15rem; color: #302d29; font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+.home .portrait-caption span { font-size: .8rem; color: #625c53; }
+.home .explore-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 5vw, 4rem); }
+.home .explore-card { padding: 1.5rem 0; border-top: 1px solid #ffffff30; transition: border-color .2s; }
+.home .explore-card:hover { border-color: #b8a0d4; }
+.home .explore-card h2 { display: flex; justify-content: space-between; gap: 1rem; margin: 1rem 0 .65rem; font-size: 1.15rem; font-weight: 600; }
+.home .explore-card h2 span { color: #c084fc; }
+.home .explore-card p { color: #94a3b8; font-size: .9rem; line-height: 1.7; }
+@media (prefers-reduced-motion: no-preference) {
+    .home .hero-copy > * { animation: home-arrive .75s cubic-bezier(.22, 1, .36, 1) both; }
+    .home .hero-copy > :nth-child(2) { animation-delay: .1s; }
+    .home .hero-copy > :nth-child(3) { animation-delay: .2s; }
+    .home .hero-copy > :nth-child(4) { animation-delay: .3s; }
+    .home .hero-copy > :nth-child(5) { animation-delay: .4s; }
+    .home .portrait-wrap { animation: home-photo-arrive 1s cubic-bezier(.22, 1, .36, 1) .2s both; }
+    .home .explore-grid { animation: home-arrive .75s cubic-bezier(.22, 1, .36, 1) .5s both; }
+}
+@keyframes home-arrive { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes home-photo-arrive { from { opacity: 0; transform: translateY(26px) rotate(-4deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
+@media (max-width: 900px) { .home .hero { gap: 2rem; } }
+@media (max-width: 700px) { .home .hero { grid-template-columns: 1fr; padding: 2.5rem 0; gap: 2.5rem; } .home .hero-copy { max-width: none; } .home .portrait-wrap { max-width: 380px; justify-self: center; } .home .explore-grid { grid-template-columns: 1fr; gap: .5rem; } }
+@media (prefers-reduced-motion: reduce) { .home .explore-card:hover { transform: none; } }

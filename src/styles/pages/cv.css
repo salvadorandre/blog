@@ -1,0 +1,22 @@
+.cv .cv-header { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: end; padding: 3.5rem 0; }
+.cv h1 { margin-top: 1rem; font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.1; font-weight: 800; letter-spacing: -.045em; }
+.cv .header-summary p { color: #aeb9ce; line-height: 1.85; max-width: 50ch; }
+.cv .header-summary a { display: inline-flex; gap: .75rem; align-items: center; min-height: 44px; margin-top: .75rem; color: #d0bddf; font-size: .9rem; }
+.cv .header-summary a:hover { color: #f1e5ff; }
+.cv .cv-section { padding: 2rem 0; border-top: 1px solid #ffffff24; }
+.cv .section-heading { margin-bottom: 1.5rem; }
+.cv .section-heading h2 { margin-top: .6rem; font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 650; letter-spacing: -.025em; }
+.cv .section-intro { margin-top: .65rem; color: #aeb9ce; line-height: 1.7; }
+.cv .company-card { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 2rem; align-items: center; padding: 2rem; background: #111827; border: 1px solid #ffffff24; border-radius: .6rem; }
+.cv .company-logo { aspect-ratio: 1; display: grid; place-items: center; padding: 1rem; border: 1px solid #d1d5db; border-radius: .35rem; background: #ffffff; }
+.cv .company-logo img { width: 100%; height: 100%; object-fit: contain; }
+.cv .logo-placeholder { display: grid; gap: .75rem; text-align: center; }
+.cv .logo-placeholder span { font-size: 1.5rem; font-weight: 600; color: #374151; }
+.cv .logo-placeholder small { color: #4b5563; font-size: .8rem; }
+.cv .company-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; }
+.cv .company-heading h3 { font-size: 1.75rem; font-weight: 700; }
+.cv .company-date { color: #aeb9ce; font-size: .8rem; }
+.cv .company-role { color: #d0bddf; margin-top: .3rem; font-weight: 600; }
+.cv .company-copy > p:not(.company-role) { margin-top: 1rem; color: #cbd5e1; line-height: 1.8; max-width: 70ch; }
+@media (max-width: 800px) { .cv .cv-header { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; } .cv .company-card { grid-template-columns: 160px minmax(0, 1fr); gap: 1.5rem; padding: 1.5rem; } }
+@media (max-width: 600px) { .cv .company-card { grid-template-columns: 1fr; padding: 1.25rem; } .cv .company-logo { width: 160px; } .cv .cv-section { padding: 1.5rem 0; } }

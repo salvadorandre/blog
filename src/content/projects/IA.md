@@ -1,10 +1,9 @@
 ---
-    title: "IA-escritorio" 
+    title: "Simulador de chat con IA" 
     url: https://inteligencia-artificial-web.vercel.app/
-    language: "JavaScript, Html, Css"
-    description: "Proyecto que simula por medio de la web un chat con un tipo de IA"
+    language: "JavaScript, HTML, CSS"
+    description: "Aplicación web que simula la interacción con un asistente de inteligencia artificial mediante una interfaz de chat."
     img: ia.jpg
 ---
-
 
 
